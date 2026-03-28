@@ -19,8 +19,8 @@ BASE_DIR = Path(__file__).parent
 OUTPUT_DIR = BASE_DIR / "output"
 
 # ── Threads ─────────────────────────────────────────────────
-THREADS_SAVED_URL = "https://www.threads.net/saved"
-THREADS_BASE_URL = "https://www.threads.net"
+THREADS_SAVED_URL = "https://www.threads.com/saved"
+THREADS_BASE_URL = "https://www.threads.com"
 
 # ── 스크래핑 설정 ───────────────────────────────────────────
 SCROLL_PAUSE_SEC = 2.0        # 스크롤 간 대기 시간
