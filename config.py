@@ -24,7 +24,7 @@ THREADS_BASE_URL = "https://www.threads.com"
 
 # ── 스크래핑 설정 ───────────────────────────────────────────
 SCROLL_PAUSE_SEC = 2.0        # 스크롤 간 대기 시간
-MAX_SCROLL_ATTEMPTS = 50      # 최대 스크롤 횟수
+MAX_SCROLL_ATTEMPTS = 100      # 최대 스크롤 횟수
 LOGIN_TIMEOUT_SEC = 300       # 로그인 대기 시간 (5분)
 
 # ── Gemini 분류 설정 ────────────────────────────────────────
