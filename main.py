@@ -180,8 +180,11 @@ def save_posts(posts: list[dict[str, Any]]) -> None:
 
 def main() -> None:
     """파이프라인 실행."""
+    if hasattr(sys.stdout, "reconfigure"):
+        sys.stdout.reconfigure(encoding="utf-8")
+        
     print("=" * 60)
-    print("🧵 Threads 저장글 → Markdown 분류 파이프라인")
+    print("[*] Threads 저장글 -> Markdown 추출 파이프라인")
     print("=" * 60)
 
     # 1) API 키 확인
