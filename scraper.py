@@ -105,7 +105,10 @@ def _collect_saved_post_links(page: Page) -> list[str]:
     """저장글 페이지에서 개별 글 링크 수집."""
     print("\n[*] 저장글 목록을 수집합니다...")
     page.goto(config.THREADS_SAVED_URL)
-    page.wait_for_load_state("networkidle")
+    try:
+        page.wait_for_load_state("domcontentloaded", timeout=15000)
+    except Exception:
+        pass
     time.sleep(5)  # 충분히 대기
 
     collected_links: set[str] = set()
@@ -204,7 +207,7 @@ def _collect_saved_post_links(page: Page) -> list[str]:
 def _scrape_single_post(page: Page, url: str, index: int) -> dict[str, Any] | None:
     """개별 글 방문 후 본문·작성자·댓글·이미지 추출."""
     try:
-        page.goto(url, wait_until="networkidle", timeout=30000)
+        page.goto(url, wait_until="domcontentloaded", timeout=15000)
         time.sleep(3)
     except Exception as e:
         print(f"  [!] 글 로드 실패 ({url}): {e}")
