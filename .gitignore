@@ -1,0 +1,13 @@
+.env
+.auth_state.json
+.crawled_urls.txt
+output/
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+env/
+venv/
+upload_to_github/
+github_upload/
+*.zip
